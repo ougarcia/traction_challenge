@@ -1,0 +1,21 @@
+%h1 sites
+.row
+  .col-xs-12.col-sm-8.col-sm-offset-2
+    %table.table
+      %thead
+        %tr
+          %th rank
+          %th name
+          %th url
+      %tbody
+        - @sites.each do |site|
+          %tr
+            %td= site.ranking
+            %td= site.name
+            %td= site.url
+
+-#%ul
+  -#- @sites.each do |site|
+    -#%a.site-anchor{ href: '#', 'data-toggle' => 'modal', 'data-target' => "#form-#{site.id}" }
+      -#%li= site.name
+%footer= paginate @sites
